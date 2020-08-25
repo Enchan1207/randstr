@@ -6,9 +6,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+char* getPass(char* pass, int length, char* chars, int charlen);
+
 int main(int argc, char *argv[]){
-    int length = 10;
-    char ch = ' ';
+    // 有効文字列設定
     char chars[] = {
         'a','b','c','d','e','f','g','h',
         'i','j','k','l','m','n','o','p',
@@ -19,13 +20,25 @@ int main(int argc, char *argv[]){
         'M','N','O','P','Q','R','S','T',
         'U','V','W','X','Y','Z'
     };
-    if(argc == 2) length = atoi(argv[1]);
-    srand(time(NULL));
 
-    for(int i = 0; i < length; i++){
-        ch = chars[rand() % 63];
-        printf("%c", ch);
-    }
-    printf("\n");
+    // パスワードの長さを設定
+    int length = 20;
+    if(argc == 2) length = atoi(argv[1]);
+
+    // 生成タイム
+    char pass[length + 1];
+    getPass(pass, length, chars, sizeof chars);
+    printf("%s", pass);
+
     return 0;
+}
+
+// パスワードを生成する
+char* getPass(char* pass, int length, char* chars, int charlen){
+    srand(time(NULL));
+    for(int i = 0; i < length; i++){
+        pass[i] = chars[rand() % charlen];
+    }
+    pass[length] = '\0';
+    return pass;
 }
