@@ -1,18 +1,13 @@
 # randstr
 
 ## Overview
-the most simplest random string generator.
 
-## Development Environment
- * Langguage:C
- * Execute:Windows 10 / sakura server(FreeBSD)
- 
-## Contents
- * main.c: main source
- 
-## Usage
- 1. compile and generate execution file
- 2. run `(generated file name) 15` to generate 15-letter string.
+シンプルなランダム文字列生成コマンド.  
+パイプで繋いだり、適当な英数字列の生成に使ったり...
+
+暗号学的に安全な方法で生成しているわけではないので、パスワードには使用しない方がいいと思います。
+そのあたりは自己責任で…()
 
 ## LICENCE
-All files on this repository are distributed under the CC0 license.
+
+このリポジトリは [MITライセンス](LICENSE) のもとで公開されています。
