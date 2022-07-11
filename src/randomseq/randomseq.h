@@ -5,7 +5,7 @@
 #ifndef _RANDOM_SEQ_
 #define _RANDOM_SEQ_
 
-#include <stdint.h>>
+#include <stdint.h>
 
 typedef uint32_t Seed;
 
