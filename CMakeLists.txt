@@ -16,8 +16,11 @@ include_directories(/usr/local/include)
 # リンクディレクトリ
 link_directories(/usr/local/lib)
 
+# サブディレクトリ追加
+add_subdirectory(src/randomseq)
+
 # ターゲット生成
 add_executable(randstr src/main.c)
 
 # ターゲットにライブラリをリンク
-target_link_libraries(randstr)
+target_link_libraries(randstr randomseq)
