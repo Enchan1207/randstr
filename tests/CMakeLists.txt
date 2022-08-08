@@ -4,7 +4,6 @@
 cmake_minimum_required(VERSION 3.21)
 
 # cofigure unittest using GoogleTest
-enable_testing()
 include(FetchContent)
 FetchContent_Declare(
   googletest
