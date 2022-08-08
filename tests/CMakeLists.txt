@@ -8,7 +8,7 @@ add_executable(randstr_test
 )
 target_link_libraries(randstr_test
     PRIVATE
-    GTest::gtest GTest::gtest_main
+    GTest::gtest_main
 )
 include_directories(${PROJECT_SOURCE_DIR}/src ${GTEST_INCLUDE_DIRS})
 
