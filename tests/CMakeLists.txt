@@ -1,7 +1,10 @@
+#
+# Unittests
+#
 cmake_minimum_required(VERSION 3.21)
 
+# cofigure unittest using GoogleTest
 enable_testing()
-
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -9,10 +12,9 @@ FetchContent_Declare(
   GIT_TAG release-1.12.1
 )
 FetchContent_MakeAvailable(googletest)
-
-find_package(GTest REQUIRED)
 include(GoogleTest)
 
+# generate testcases
 add_executable(randstr_test
     test_randomseq.cpp
 )
