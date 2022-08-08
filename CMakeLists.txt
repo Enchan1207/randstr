@@ -1,23 +1,13 @@
 #
-# Cmake
+# randstr
 #
-
-## 環境設定
-
-# バージョン
 cmake_minimum_required(VERSION 3.21)
+project(randstr CXX)
 
-# プロジェクト名, 言語
-project(randstr C)
+enable_testing()
 
-# インクルードディレクトリ
-include_directories(/usr/local/include)
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
 
-# リンクディレクトリ
-link_directories(/usr/local/lib)
-
-# ターゲット生成
-add_executable(randstr src/main.c)
-
-# ターゲットにライブラリをリンク
-target_link_libraries(randstr)
+add_subdirectory(src)
+add_subdirectory(tests)
