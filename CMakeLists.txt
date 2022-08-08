@@ -1,26 +1,6 @@
-#
-# Cmake
-#
-
-## 環境設定
-
-# バージョン
 cmake_minimum_required(VERSION 3.21)
+project(randstr CXX)
 
-# プロジェクト名, 言語
-project(randstr C)
-
-# インクルードディレクトリ
-include_directories(/usr/local/include)
-
-# リンクディレクトリ
-link_directories(/usr/local/lib)
-
-# サブディレクトリ追加
-add_subdirectory(src/randomseq)
-
-# ターゲット生成
-add_executable(randstr src/main.c)
-
-# ターゲットにライブラリをリンク
-target_link_libraries(randstr randomseq)
+enable_testing()
+add_subdirectory(src)
+add_subdirectory(tests)
