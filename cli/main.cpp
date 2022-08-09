@@ -1,7 +1,7 @@
 //
 //
 //
-#include <random/random.hpp>
+#include <randstr.hpp>
 
 int main(int argc, char const *argv[]){
     

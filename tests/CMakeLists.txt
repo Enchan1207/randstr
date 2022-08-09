@@ -16,9 +16,10 @@ include(GoogleTest)
 # generate testcases
 add_executable(randstr_test
     test_randomseq.cpp
+    test_randstr.cpp
 )
 target_link_libraries(randstr_test
-    random
+    randstr
     GTest::gtest_main
 )
 include_directories(${PROJECT_SOURCE_DIR}/src ${GTEST_INCLUDE_DIRS})
