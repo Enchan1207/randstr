@@ -18,7 +18,7 @@ add_executable(randstr_test
     test_randomseq.cpp
 )
 target_link_libraries(randstr_test
-    PRIVATE
+    random
     GTest::gtest_main
 )
 include_directories(${PROJECT_SOURCE_DIR}/src ${GTEST_INCLUDE_DIRS})
