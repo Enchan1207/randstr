@@ -14,4 +14,9 @@ uint32_t random(uint32_t* S) {
     return s;
 }
 
+uint32_t randrange(uint32_t* seed, uint32_t start, uint32_t end) {
+    uint32_t num = random(seed);
+    return num % (end - start + 1) + start;
+}
+
 }  // namespace Random

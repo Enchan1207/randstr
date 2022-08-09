@@ -19,3 +19,17 @@ TEST(randomTest, generateRandomValue) {
     uint32_t num_2 = Random::random(&seed_1);
     EXPECT_EQ(num_1, num_2);
 }
+
+// 範囲付き
+TEST(randomTest, generateRangedRandomValue) {
+    uint32_t seed = 0x12345678, *S = &seed;
+
+    // 範囲を超えない
+    for (int i = 0; i < 100; i++)
+    {
+        uint32_t min = 0, max = 10000;
+        uint32_t num = Random::randrange(S, min, max);
+        EXPECT_GE(num, min);
+        EXPECT_LE(num, max);
+    }
+}
