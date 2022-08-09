@@ -5,7 +5,7 @@
 #ifndef _RANDOM_
 #define _RANDOM_
 
-#include <numbers>
+#include <stdint.h>
 
 namespace Random {
 
