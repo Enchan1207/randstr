@@ -1,5 +1,7 @@
 # randstr
 
+[![CMake](https://github.com/Enchan1207/randstr/actions/workflows/cmake.yml/badge.svg)](https://github.com/Enchan1207/randstr/actions/workflows/cmake.yml)
+
 ## Overview
 
 シンプルなランダム文字列生成コマンド.  
@@ -10,7 +12,16 @@
 
 ## Build
 
-CMakeを使用してビルドできるようにしています。 `make` だけで通ると思いますが、パス周りでエラーになる場合は `Makefile` を適当に修正してください。
+CMakeを使用してビルドできるようにしています。
+
+```
+mkdir build
+cd build
+
+cmake ..
+make
+make test
+```
 
 ## LICENCE
 
