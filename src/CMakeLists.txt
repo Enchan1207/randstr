@@ -7,3 +7,5 @@ add_library(randstr STATIC
     randstr.cpp
 )
 target_link_libraries(randstr random)
+
+include_directories(${PROJECT_SOURCE_DIR}/src)
