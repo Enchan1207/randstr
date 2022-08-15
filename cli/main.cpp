@@ -3,8 +3,6 @@
 //
 // @2022 Enchan1207.
 //
-#include <sys/time.h>
-#include <time.h>
 
 #include <cerrno>
 #include <cstring>
@@ -22,21 +20,13 @@ int main(int argc, char const *argv[]) {
     std::string validchars = lower_alphabets + upper_alphabets + numbers + symbols;
     const uint32_t length = 20;
 
-    // 初期シード用の時刻情報を取得
-    struct timeval time;
-    int result = gettimeofday(&time, NULL);
+    // シード生成
+    uint32_t seed = 0x00000000;
+    int result = RandStr::generate_initial_seed(&seed);
     if (result != 0) {
-        std::cerr << "an error occured while get current time information." << std::endl;
-        std::cerr << "no." << errno << " message: " << std::strerror(1) << std::endl;
+        std::cerr << "an error occured while get current time information." << std::endl
+                  << "No " << errno << ": " << std::strerror(errno) << std::endl;
         return 1;
-    }
-    uint32_t seed = (uint32_t)time.tv_usec;
-
-    // 時刻情報だけだと連続処理する際に面倒なことになりそうなので、適当な法則に従って何度かシードを更新する
-    // でもこれ結局 「このコマンドの実行に1us以上かかる」ことが前提なので(1us以内に終了するなら同じ内容が出力されるはず)、
-    // やっぱりあまり強力ではないのかもしれない 例えば、クソ強マシンで途中のパイプとして使った場合など…
-    for (uint i = 0; i < seed % 10; i++) {
-        Random::random(&seed);
     }
 
     // 生成して終了
